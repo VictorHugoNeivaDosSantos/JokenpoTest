@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Jokenpo</name>
+    </assembly>
+    <members>
+        <member name="M:Jokenpo.Controllers.MatchController.AddMoveInMatch(Jokenpo.Dto.MoveDto)">
+            <summary>
+            Rota utilizada para adicionar jogada do jogador em uma partida.
+            </summary>
+        </member>
+        <member name="M:Jokenpo.Controllers.MatchController.GetMatch">
+            <summary>
+            Rota utilizada para retornar uma lista de todas as partidas já concluída.
+            </summary>
+        </member>
+        <member name="M:Jokenpo.Controllers.MatchController.GetWinnerByMatchId(System.Guid)">
+            <summary>
+            Rota utilizada para obter o ganhador de uma partida
+            </summary>
+        </member>
+        <member name="M:Jokenpo.Controllers.PlayerController.AddPlayer(Jokenpo.Dto.PlayerDto)">
+            <summary>
+            Rota utilizada para adicionar um player.
+            </summary>
+        </member>
+        <member name="M:Jokenpo.Controllers.PlayerController.GetPlayer(System.Guid)">
+            <summary>
+            Rota utilizada para buscar um player atravéz do Id.
+            </summary>
+        </member>
+        <member name="M:Jokenpo.Controllers.PlayerController.DeletarPlayer(System.Guid)">
+            <summary>
+            Rota utilizada para desativar um player.
+            </summary>
+        </member>
+        <member name="M:Jokenpo.Controllers.PlayerController.GetPlayerDto">
+            <summary>
+            Retorna uma lista de todos os playes cadastrado no projeto.
+            </summary>
+        </member>
+    </members>
+</doc>
