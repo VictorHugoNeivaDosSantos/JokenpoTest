@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Jokenpo.Dto;
+using Jokenpo.Enuns;
 using Jokenpo.Mapper;
 using Jokenpo.Models;
 using Jokenpo.Repositories.Interface;
@@ -47,7 +48,6 @@ namespace JokenpoTest.Services
  
             };
           
-
             Assert.Throws<Exception>(() => _servicePlayer.AddPlayer(playerDto));
         }
 
@@ -68,6 +68,23 @@ namespace JokenpoTest.Services
             Assert.AreEqual("teste", _servicePlayer.GetPlayerById(player.Id).Name);
         }
 
+        [Test]
+        public void DeletarPlayerTest()
+        {
+            var expected = "Player desativado";
+            var player = new Player
+            {
+                Id = Guid.Parse("50d72022-4ae8-4ee0-96ff-7470fc4719bf"),
+                Email = "teste",
+                Name = "teste",
+                Status = Jokenpo.Enuns.StatusPlayer.Ativo
+            };
 
+            var list = new List<Player>();
+            _repositoryPlayer.Setup(s => s.GetPlayerById(player.Id)).Returns(player);
+            var result = _servicePlayer.DeletePlayer(player.Id);
+
+            Assert.AreEqual(expected, result);
+        }
     }
 }
